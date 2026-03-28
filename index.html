@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LENA // ARCHITECT OF THE PINK UNIVERSE // OMEGA EDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Outfit:wght@100;300;400;600;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #fff5f7;
+            --accent-pink: #ffafcc;
+            --hot-pink: #ff4d6d;
+            --deep-purple: #5e548e;
+            --glass: rgba(255, 255, 255, 0.7);
+            --border: rgba(255, 255, 255, 0.9);
+            --shadow: 0 50px 100px rgba(255, 77, 109, 0.2);
+            --transition-omega: all 3.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; cursor: crosshair; }
+        body { background-color: var(--bg-base); font-family: 'Outfit', sans-serif; color: var(--deep-purple); overflow-x: hidden; }
+
+        /* Navigation - The Command Center */
+        nav {
+            position: fixed; left: 30px; top: 50%; transform: translateY(-50%);
+            z-index: 9999; background: var(--glass); backdrop-filter: blur(50px);
+            padding: 70px 30px; border-radius: 100px; border: 2px solid var(--hot-pink);
+            box-shadow: var(--shadow);
+        }
+        nav ul { list-style: none; display: flex; flex-direction: column; gap: 25px; }
+        nav a {
+            writing-mode: vertical-rl; text-decoration: none; color: var(--deep-purple);
+            font-size: 0.8rem; letter-spacing: 6px; text-transform: uppercase; opacity: 0.2; transition: 1s;
+        }
+        nav a.active, nav a:hover { opacity: 1; color: var(--hot-pink); transform: scale(1.3) translateX(10px); font-weight: 900; }
+
+        /* The Universe Spacers - Ultra Omega Long */
+        .void-spacer { 
+            height: 350vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: relative; 
+            overflow: hidden;
+        }
+        .void-text {
+            font-family: 'Space Grotesk';
+            font-size: 25vw;
+            font-weight: 900;
+            color: var(--hot-pink);
+            opacity: 0.02;
+            white-space: nowrap;
+            pointer-events: none;
+            text-transform: uppercase;
+        }
+
+        /* Sections */
+        section { min-height: 150vh; padding: 300px 10% 300px 280px; display: flex; flex-direction: column; justify-content: center; }
+        .reveal { opacity: 0; transform: scale(0.8) translateY(200px); transition: var(--transition-omega); }
+        .reveal.active { opacity: 1; transform: scale(1) translateY(0); }
+
+        .glass-box { background: var(--glass); backdrop-filter: blur(60px); border-radius: 100px; padding: 120px; border: 2px solid var(--border); box-shadow: var(--shadow); position: relative; }
+        
+        /* Grids */
+        .hw-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 60px; margin-top: 80px; }
+        .hw-card { background: rgba(255, 255, 255, 0.4); padding: 70px; border-radius: 60px; transition: 1.2s; border: 1px solid transparent; backdrop-filter: blur(20px); }
+        .hw-card:hover { transform: translateY(-40px) rotate(2deg); background: white; border-color: var(--hot-pink); box-shadow: 0 60px 120px rgba(255, 77, 109, 0.3); }
+        .hw-card h4 { font-family: 'Space Grotesk'; font-size: 1rem; color: var(--hot-pink); text-transform: uppercase; margin-bottom: 25px; letter-spacing: 4px; }
+        .hw-card p { font-size: 2.2rem; font-weight: 900; line-height: 1.1; color: #1a1a1a; }
+
+        /* Titles */
+        .hero-title { font-family: 'Space Grotesk'; font-size: 18rem; line-height: 0.7; color: var(--hot-pink); letter-spacing: -15px; font-weight: 900; }
+        .sec-title { font-family: 'Space Grotesk'; font-size: 8rem; margin-bottom: 60px; line-height: 0.8; letter-spacing: -5px; font-weight: 900; }
+        .glow-title { animation: pulseGlow 5s ease-in-out infinite alternate; }
+        @keyframes pulseGlow { from { text-shadow: 0 0 20px rgba(255, 175, 204, 0.2); } to { text-shadow: 0 0 100px rgba(255, 77, 109, 0.8); } }
+
+        /* Code Block */
+        .terminal { background: #000; border-radius: 40px; padding: 80px; font-family: 'JetBrains Mono'; color: #f8f8f2; font-size: 1.3rem; line-height: 1.8; border: 3px solid var(--hot-pink); box-shadow: 0 0 50px rgba(255, 77, 109, 0.2); }
+        .cpp-key { color: #ff79c6; font-weight: bold; } .cpp-str { color: #f1fa8c; } .cpp-type { color: #8be9fd; }
+
+        /* The Button of Gods */
+        .discord-btn { background: #5865F2; color: white; text-decoration: none; padding: 60px 120px; border-radius: 80px; display: inline-flex; align-items: center; gap: 40px; transition: 0.8s; margin-top: 100px; border: 5px solid transparent; }
+        .discord-btn:hover { transform: scale(1.2) rotate(-3deg); background: #404eed; border-color: white; box-shadow: 0 0 150px rgba(88, 101, 242, 0.6); }
+
+        #bg-stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+    <div id="bg-stars"></div>
+
+    <nav>
+        <ul>
+            <li><a href="#init" class="active">01 // START</a></li>
+            <li><a href="#about">02 // EGO</a></li>
+            <li><a href="#hardware">03 // POWER</a></li>
+            <li><a href="#monitors">04 // SIGHT</a></li>
+            <li><a href="#code">05 // LOGIC</a></li>
+            <li><a href="#valorant">06 // KILL</a></li>
+            <li><a href="#routine">07 // LOOP</a></li>
+            <li><a href="#philosophy">08 // MIND</a></li>
+            <li><a href="#skills">09 // TOOLS</a></li>
+            <li><a href="#contact">10 // EXIT</a></li>
+        </ul>
+    </nav>
+
+    <section id="init">
+        <div class="reveal">
+            <p style="letter-spacing: 20px; color: var(--hot-pink); font-weight: 900; font-size: 1.5rem; margin-bottom: 20px;">SYSTEM OVERLOAD // LENA v.OMEGA</p>
+            <h1 class="hero-title">LENA.<br>SUPREME.</h1>
+            <p style="font-size: 2.5rem; max-width: 1200px; margin-top: 60px; font-weight: 100; line-height: 1.4;">
+                I am the error in your boring reality. 17 years of perfection, compiled into a pink high-performance entity. I don't breathe air; I process data. I don't have hobbies; I have dominance protocols.
+            </p>
+            <button onclick="sparkle()" style="margin-top: 100px; padding: 40px 100px; border-radius: 100px; background: var(--hot-pink); color: white; border: none; font-weight: 900; font-size: 2rem; cursor: pointer; letter-spacing: 5px;">IGNITE THE UNIVERSE ✨</button>
+        </div>
+    </section>
+
+    <div class="void-spacer"><div class="void-text">TRAVERSING DATA</div></div>
+    <div class="void-spacer"><div class="void-text">OPTIMIZING SPACE</div></div>
+
+    <section id="about">
+        <div class="glass-box reveal">
+            <h2 class="sec-title glow-title">The Apex Identity.</h2>
+            <p style="font-size: 2.2rem; line-height: 1.5; font-weight: 300;">
+                I am the result of perfect parameters. Every decision I make is a calculated move toward total efficiency. I am currently architecting my future at a university level, while the rest of the world is still trying to figure out their "Hello World". I am arrogant because the numbers support me. I am pink because power doesn't need to look aggressive to be lethal.
+            </p>
+            <div class="hw-grid">
+                <div class="hw-card"><h4>Brain Efficiency</h4><p>99.9% // No Thermal Throttling</p></div>
+                <div class="hw-card"><h4>Social Protocol</h4><p>Elite Only // Filter Enabled</p></div>
+                <div class="hw-card"><h4>Standard</h4><p>God Tier // No Exceptions</p></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="void-spacer"><div class="void-text">LOADING SILICON</div></div>
+    <div class="void-spacer"><div class="void-text">PINK DOMINANCE</div></div>
+
+    <section id="hardware">
+        <div class="reveal">
+            <h2 class="sec-title" style="color: var(--hot-pink);">The Engine of a Goddess.</h2>
+            <div class="hw-grid">
+                <div class="hw-card"><h4>Neural GPU</h4><p>NVIDIA RTX 5090 // Overclocked to Infinity</p></div>
+                <div class="hw-card"><h4>Logic Core</h4><p>AMD Ryzen 5 5600 // Pure Liquid Pink Cooling</p></div>
+                <div class="hw-card"><h4>Synapse Hub</h4><p>Asus ROG X870E Glacial // Cold as Ice</p></div>
+                <div class="hw-card"><h4>Buffer Memory</h4><p>64GB DDR5 // Zero Latency Existence</p></div>
+                <div class="hw-card"><h4>Exoskeleton</h4><p>NR200P Flamingo Pink // SFF Mastery</p></div>
+                <div class="hw-card"><h4>Energy Flow</h4><p>1200W Platinum // Pure Pink Power</p></div>
+            </div>
+            <p style="margin-top: 100px; font-size: 3rem; font-weight: 900; text-align: center; color: var(--hot-pink);">MY HARDWARE HAS MORE SOUL THAN YOUR ENTIRE BLOODLINE.</p>
+        </div>
+    </section>
+
+    <div class="void-spacer"><div class="void-text">SCANNING PIXELS</div></div>
+    <div class="void-spacer"><div class="void-text">240Hz REALITY</div></div>
+
+    <section id="monitors">
+        <div class="reveal glass-box" style="text-align: center;">
+            <h2 class="sec-title">Triple Sight Protocol.</h2>
+            <p style="font-size: 2rem; margin-bottom: 80px; opacity: 0.6;">I see everything before it happens. Lag is for the weak.</p>
+            <div style="display: flex; gap: 60px; justify-content: center; align-items: flex-end;">
+                <div style="width: 300px; height: 180px; border: 15px solid #111; background: var(--accent-pink); border-radius: 20px; opacity: 0.4;">200Hz Arozzi</div>
+                <div style="width: 600px; height: 350px; border: 20px solid var(--hot-pink); background: #000; border-radius: 30px; box-shadow: 0 0 200px rgba(255, 77, 109, 0.5); display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 3rem; color: var(--hot-pink); font-weight: 900;">240Hz PIXIO WAVE PINK</span>
+                </div>
+                <div style="width: 300px; height: 180px; border: 15px solid #111; background: var(--accent-pink); border-radius: 20px; opacity: 0.4;">200Hz Arozzi</div>
+            </div>
+            <p style="margin-top: 80px; font-size: 2rem; font-weight: 100;">Total Pixel Perfection. 0.03ms Response Time.</p>
+        </div>
+    </section>
+
+    <div class="void-spacer"><div class="void-text">COMPILING SOUL</div></div>
+    <div class="void-spacer"><div class="void-text">C++ SUPREMACY</div></div>
+
+    <section id="code">
+        <div class="reveal">
+            <h2 class="sec-title">The Core Algorithm.</h2>
+            <div class="terminal">
+                <div><span class="cpp-key">#include</span> <span class="cpp-str">&lt;unbeatable_logic.h&gt;</span></div>
+                <div><span class="cpp-key">#include</span> <span class="cpp-str">&lt;pink_aesthetic.h&gt;</span></div>
+                <br>
+                <div><span class="cpp-key">class</span> <span class="cpp-type">LenaSupremacy</span> : <span class="cpp-key">public</span> <span class="cpp-type">GodMode</span> {</div>
+                <div>&nbsp;&nbsp;<span class="cpp-key">public</span>:</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cpp-key">void</span> <span style="color: #50fa7b;">ExecuteDay</span>() {</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cpp-key">while</span> (existence == <span class="cpp-type">true</span>) {</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this->ExcelAtEverything();</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this->ClutchRankedGame(Agent::JETT);</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this->LookPerfect(Color::PINK);</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cpp-key">if</span> (haters.count() > 0) haters.delete_all();</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+                <div>};</div>
+            </div>
+            <p style="margin-top: 40px; font-family: 'JetBrains Mono'; opacity: 0.4;">// Memory leaked? Never. I manage my own resources.</p>
+        </div>
+    </section>
+
+    <div class="void-spacer"><div class="void-text">DELETING ENEMIES</div></div>
+    <div class="void-spacer"><div class="void-text">ASCENDANT REACHED</div></div>
+
+    <section id="valorant">
+        <div class="reveal glass-box" style="background: linear-gradient(135deg, #ff4655 0%, #ff4d6d 100%); color: white;">
+            <h2 class="sec-title">Target Deletion.</h2>
+            <p style="font-size: 2.5rem; font-weight: 100; margin-bottom: 60px; line-height: 1.2;">
+                I don't play for fun. I play for the sound of the headshot ping. It's the only rhythm I need. 1v5 is just a statistical probability that I solve with my mouse.
+            </p>
+            <div class="hw-grid">
+                <div class="hw-card" style="background: rgba(0,0,0,0.4); color: white; border: 1px solid white;"><h4>Status</h4><p>Ascendant // Untouchable</p></div>
+                <div class="hw-card" style="background: rgba(0,0,0,0.4); color: white; border: 1px solid white;"><h4>Agent</h4><p>Jett // Wind Goddess</p></div>
+                <div class="hw-card" style="background: rgba(0,0,0,0.4); color: white; border: 1px solid white;"><h4>Headshot %</h4><p>Calculated.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="void-spacer"><div class="void-text">CALIBRATING TIME</div></div>
+    <div class="void-spacer"><div class="void-text">PEAK PERFORMANCE</div></div>
+
+    <section id="routine">
+        <div class="reveal">
+            <h2 class="sec-title">The Perpetual Loop.</h2>
+            <div style="display: flex; flex-direction: column; gap: 40px; margin-top: 80px;">
+                <div class="hw-card" style="display: flex; justify-content: space-between; align-items: center; padding: 60px;"><span>08:00 AM</span><span>System Boot // Aesthetic Protocol // Pink Coffee</span></div>
+                <div class="hw-card" style="display: flex; justify-content: space-between; align-items: center; padding: 60px;"><span>12:00 PM</span><span>Uni Architecture // High-Level Neural Expansion</span></div>
+                <div class="hw-card" style="display: flex; justify-content: space-between; align-items: center; padding: 60px;"><span>04:00 PM</span><span>Gym Protocol // Physical Hardware Maintenance</span></div>
+                <div class="hw-card" style="display: flex; justify-content: space-between; align-items: center; padding: 60px;"><span>08:00 PM</span><span>Valorant High-Stakes // Server Domination</span></div>
+                <div class="hw-card" style="display: flex; justify-content: space-between; align-items: center; padding: 60px;"><span>02:00 AM</span><span>Sleep State // Regenerative Logic Patching</span></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="void-spacer"><div class="void-text">PHILOSOPHY OF POWER</div></div>
+    <div class="void-spacer"><div class="void-text">AESTHETIC IS LAW</div></div>
+
+    <section id="philosophy">
+        <div class="reveal" style="text-align: right;">
+            <h2 class="sec-title glow-title" style="color: var(--hot-pink);">Aesthetic<br>is the only<br>Truth.</h2>
+            <p style="font-size: 3rem; font-weight: 100; line-height: 1.1; margin-top: 50px;">"If it's not beautiful, it's inefficient. If it's not pink, it's a bug."</p>
+            <p style="font-size: 4rem; font-weight: 900; color: var(--hot-pink); margin-top: 60px; letter-spacing: -5px;">I AM LENA. I AM THE PATCH.</p>
+        </div>
+    </section>
+
+    <div class="void-spacer"><div class="void-text">KNOWLEDGE BASE</div></div>
+    <div class="void-spacer"><div class="void-text">PROGRAMMING REALITY</div></div>
+
+    <section id="skills">
+        <div class="reveal glass-box">
+            <h2 class="sec-title">The Technical Stack.</h2>
+            <p style="font-size: 2rem; margin-bottom: 100px; font-weight: 100;">My brain is a multi-threaded compiler. These are my tools.</p>
+            <div class="hw-grid">
+                <div class="hw-card"><h4>God Language</h4><p>C++ / Assembly</p><div style="height:10px; background:var(--hot-pink); width:99%; border-radius:20px; margin-top:30px; box-shadow: 0 0 30px var(--hot-pink);"></div></div>
+                <div class="hw-card"><h4>Object Logic</h4><p>Java</p><div style="height:10px; background:var(--hot-pink); width:95%; border-radius:20px; margin-top:30px;"></div></div>
+                <div class="hw-card"><h4>Web Mind</h4><p>JavaScript</p><div style="height:10px; background:var(--hot-pink); width:92%; border-radius:20px; margin-top:30px;"></div></div>
+                <div class="hw-card"><h4>Visual Shell</h4><p>HTML & CSS</p><div style="height:10px; background:var(--hot-pink); width:100%; border-radius:20px; margin-top:30px; box-shadow: 0 0 20px var(--hot-pink);"></div></div>
+                <div class="hw-card"><h4>Game Logic</h4><p>C#</p><div style="height:10px; background:var(--hot-pink); width:88%; border-radius:20px; margin-top:30px;"></div></div>
+                <div class="hw-card"><h4>Mobile Flow</h4><p>Kotlin</p><div style="height:10px; background:var(--hot-pink); width:85%; border-radius:20px; margin-top:30px;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="void-spacer"><div class="void-text">FINAL OVERRIDE</div></div>
+    <div class="void-spacer"><div class="void-text">ENTER THE LUNCHROOM</div></div>
+
+    <section id="contact">
+        <div class="reveal" style="text-align: center;">
+            <span style="font-weight: 900; letter-spacing: 30px; opacity: 0.2; font-size: 1.5rem;">DIRECT ACCESS PROTOCOL</span>
+            <br>
+            <a href="https://discord.gg/CkjEmHaNkb" target="_blank" class="discord-btn">
+                <svg width="80" height="80" viewBox="0 0 127 96" fill="white"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.71,32.65-1.87,56.6.38,80.1a105.77,105.77,0,0,0,32.11,16.18,77.11,77.11,0,0,0,6.85-11.13c-3.1-1.18-6.06-2.57-8.89-4.15.67-.51,1.35-1,2-1.51a74.12,74.12,0,0,0,62.26,0c.68.51,1.35,1,2,1.51-2.83,1.58-5.79,3-8.89,4.15a76.62,76.62,0,0,0,6.85,11.13,105.09,105.09,0,0,0,32.19-16.18C129.66,52.84,124.3,29,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5.12-12.67,11.43-12.67S54,46,53.87,53,48.74,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5.12-12.67,11.43-12.67S96.19,46,96.07,53,90.94,65.69,82.24,65.69Z"/></svg>
+                <span style="font-size: 5rem; font-weight: 900;">Nighty Lunchroom</span>
+            </a>
+            <p style="margin-top: 250px; opacity: 0.1; letter-spacing: 20px; font-weight: 900; font-size: 1.2rem;">EST. 2026 // COMPILED FOR THE ELITE AND PINK // NO ADMITTANCE TO NORMIES</p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        function sparkle() {
+            confetti({ particleCount: 500, spread: 200, origin: { y: 0.5 }, colors: ['#ffafcc', '#ff4d6d', '#ffffff', '#5865F2'] });
+        }
+
+        const reveal = () => {
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active");
+            });
+        };
+        window.addEventListener("scroll", reveal);
+
+        window.onscroll = () => {
+            let current = "";
+            document.querySelectorAll("section").forEach(sec => {
+                if (pageYOffset >= sec.offsetTop - 500) current = sec.getAttribute("id");
+            });
+            document.querySelectorAll("nav a").forEach(a => {
+                a.classList.remove("active");
+                if (a.getAttribute("href").includes(current)) a.classList.add("active");
+            });
+        };
+
+        // Giga Star Generator
+        const bg = document.getElementById('bg-stars');
+        for (let i = 0; i < 100; i++) {
+            let s = document.createElement('div');
+            let size = Math.random() * 3 + 1;
+            s.style.cssText = `position:absolute; width:${size}px; height:${size}px; background:white; top:${Math.random()*100}%; left:${Math.random()*100}%; border-radius:50%; box-shadow: 0 0 10px white; opacity:${Math.random()}; animation: blink ${Math.random()*5+2}s infinite alternate;`;
+            bg.appendChild(s);
+        }
+
+        reveal();
+    </script>
+    <style>
+        @keyframes blink { from { opacity: 0.2; } to { opacity: 1; } }
+    </style>
+</body>
+</html>
